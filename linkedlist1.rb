@@ -23,9 +23,10 @@ class Stack
 
 
   def pop
-    return print "nil\n" if @data.nil?
-    print "#{@data.value}\n"
+    return nil unless @data
+    ret_val = @data.value
     @data = @data.next_node
+    return ret_val
   end
 
 end
@@ -50,8 +51,6 @@ def print_values(list_node)
     return
   end
 end
-
-
 
 
 node1 = LinkedListNode.new(37)
